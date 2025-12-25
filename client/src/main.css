@@ -4,25 +4,25 @@
 :root {
   /* Background colors */
   --color-background: oklch(0.1 0 209);
-  --color-surface: oklch(0.15 0 209);
-  --color-surface-elevated: oklch(0.2 0 209);
+  --color-surface: oklch(0.2 0 209);
+  --color-surface-elevated: oklch(0.3 0 209);
 
   /* Text colors */
-  --color-text-primary: oklch(0.95 0 209);
-  --color-text-secondary: oklch(0.85 0 209);
+  --color-text-primary: oklch(1 0 209);
+  --color-text-secondary: oklch(0.9 0 209);
   --color-text-tertiary: oklch(0.75 0 209);
 
   /* Border colors */
-  --color-border: oklch(0.2 0 209);
-  --color-border-hover: oklch(0.3 0 209);
+  --color-border: oklch(0.3 0 209);
+  --color-border-hover: oklch(0.4 0 209);
 }
 
 /* Light mode colors */
 :root.light {
   /* Background colors */
-  --color-background: oklch(0.98 0 209);
+  --color-background: oklch(0.9 0 209);
   --color-surface: oklch(0.95 0 209);
-  --color-surface-elevated: oklch(0.92 0 209);
+  --color-surface-elevated: oklch(1 0 209);
 
   /* Text colors */
   --color-text-primary: oklch(0.1 0 209);

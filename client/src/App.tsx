@@ -1,8 +1,11 @@
+import HomePage from "./pages/HomePage";
+import { ThemeProvider } from "./contexts/ThemeContext";
+
 function App() {
   return (
-    <>
-      <h1 className="p-4 font-bold text-4xl">Hello World!</h1>
-    </>
+    <ThemeProvider>
+      <HomePage />
+    </ThemeProvider>
   );
 }
 
