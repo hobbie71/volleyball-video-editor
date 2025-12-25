@@ -1,10 +1,12 @@
 import { FileInput } from "../components/FileInput";
 import { ThemeToggle } from "../components/ThemeToggle";
 import Page from "../components/ui/Page";
+import { postVideoEvents } from "../api/videoApi";
 
 const HomePage = () => {
-  const handleFileUpload = (file: File) => {
-    console.log("Uploaded file:", file);
+  const handleFileUpload = async (file: File) => {
+    const response = await postVideoEvents(file);
+    console.log(response);
   };
 
   return (
