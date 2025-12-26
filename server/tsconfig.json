@@ -3,9 +3,6 @@
   "compilerOptions": {
     // File Layout
     "outDir": "dist",
-    "paths": {
-      "@shared/*": ["../shared/*"]
-    },
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module

@@ -1,0 +1,12 @@
+{
+  "name": "@vve/shared",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./types/*": "./types/*",
+    "./schemas/*": "./schemas/*"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  }
+}

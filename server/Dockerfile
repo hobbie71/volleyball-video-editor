@@ -7,10 +7,17 @@ FROM node:${NODE_VERSION}-alpine AS development
 
 WORKDIR /app
 
-COPY package*.json ./
+# Copy root workspace files
+COPY package.json package-lock.json* ./
+
+# Copy all workspace packages
+COPY shared ./shared
+COPY server ./server
+
+# Install dependencies for the entire workspace
 RUN npm install
 
-COPY . .
+WORKDIR /app/server
 
 EXPOSE 3000
 
@@ -21,10 +28,17 @@ FROM node:${NODE_VERSION}-alpine AS production
 
 WORKDIR /app
 
-COPY package*.json ./
+# Copy root workspace files
+COPY package.json package-lock.json* ./
+
+# Copy all workspace packages
+COPY shared ./shared
+COPY server ./server
+
+# Install production dependencies
 RUN npm ci --only=production
 
-COPY . .
+WORKDIR /app/server
 RUN npm run build
 
 EXPOSE 3000
