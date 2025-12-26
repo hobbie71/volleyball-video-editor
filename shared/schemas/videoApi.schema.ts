@@ -1,6 +1,8 @@
-import { type GameEvent } from "@shared/types/gameEvent.types.js";
-
-export interface PostVideoEventsResponse {
+export interface PostCompressVideoResponse {
   message: string;
-  events: GameEvent[];
+  compressedVideoUrl: string;
+}
+export interface PostConcatVideoResponse {
+  message: string;
+  concatenatedVideoUrl: string;
 }
