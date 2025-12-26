@@ -2,6 +2,7 @@ import express, { type Request, type Response } from "express";
 import { createVideoRouter } from "./routes/videoRouter.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import cors from "cors";
+import { createGameRouter } from "./routes/gameRouter.js";
 
 const app = express();
 
@@ -31,6 +32,10 @@ app.get("/", (req: Request, res: Response) => {
 // Register video router
 const videoRouter = createVideoRouter();
 app.use("/api/videos", videoRouter);
+
+// Register game router
+const gameRouter = createGameRouter();
+app.use("/api/games", gameRouter);
 
 // Global error handler
 // ! MUST BE THE LAST MIDDLEWARE
