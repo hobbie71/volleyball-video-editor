@@ -1,5 +1,5 @@
 import { AppError } from "../types/AppError.js";
-import type { ErrorResponse } from "@shared/types/errorResponse.types.js";
+import type { ErrorResponse } from "@vve/shared/types/errorResponse.types.js";
 
 export const errorHandler = (error?: AppError): ErrorResponse => {
   if (!error) {
