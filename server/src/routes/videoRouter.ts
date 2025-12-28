@@ -37,7 +37,9 @@ export const createVideoRouter = () => {
 
         const videoIndex = parseInt(videoIndexParam, 10);
         if (isNaN(videoIndex) || videoIndex < 0 || videoIndex > 10) {
-          return next(new AppError("Video index must be a number between 0 and 10", 400));
+          return next(
+            new AppError("Video index must be a number between 0 and 10", 400)
+          );
         }
 
         // Ensure file was uploaded
@@ -104,7 +106,10 @@ export const createVideoRouter = () => {
           // Also verify files exist
           if (!fileService.fileExists(videoPath)) {
             return next(
-              new AppError(`Video file not found: ${videoPath.split('/').pop()}`, 404)
+              new AppError(
+                `Video file not found: ${videoPath.split("/").pop()}`,
+                404
+              )
             );
           }
         }
