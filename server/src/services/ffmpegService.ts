@@ -5,8 +5,8 @@ import path from "path";
 const { spawn } = await import("child_process");
 
 class FfmpegService {
-  scale: string = "1280:-1"; // Maintain aspect ratio with width 1280
-  fps: number = 24; // Target frame rate
+  scale: string = `${process.env.FFMPEG_SCALE_WIDTH || "1280"}:${process.env.FFMPEG_SCALE_HEIGHT || "-1"}`; // Maintain aspect ratio with width 1280
+  fps: number = Number(process.env.FFMPEG_FRAME_RATE || 24); // Target frame rate
 
   public async compressVideo(
     inputPath: string,
