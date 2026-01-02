@@ -83,6 +83,14 @@ class FileService {
   public async ensureDirectory(dirPath: string): Promise<void> {
     await fs.promises.mkdir(dirPath, { recursive: true });
   }
+
+  /**
+   * Copy a file from source to destination
+   */
+  public async copyFile(sourcePath: string, destPath: string): Promise<void> {
+    await fs.promises.copyFile(sourcePath, destPath);
+    console.log(`Copied file from ${sourcePath} to ${destPath}`);
+  }
 }
 
 export const fileService = new FileService();
