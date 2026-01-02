@@ -21,6 +21,9 @@ WORKDIR /app/server
 
 EXPOSE 3000
 
+# Install ffmpeg for video processing
+RUN apk add --no-cache ffmpeg
+
 CMD ["npm", "run", "dev"]
 
 # Production stage
