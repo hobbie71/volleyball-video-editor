@@ -39,6 +39,11 @@ export const createGameRouter = () => {
     "/events",
     async (req: Request, res: Response, next: NextFunction) => {
       try {
+        console.log(
+          "Received request for /games/events with query:",
+          req.query
+        );
+
         const gameId = req.query.gameId as string;
         const videoPath = req.query.videoPath as string;
 
@@ -68,6 +73,9 @@ export const createGameRouter = () => {
         }
 
         // Get Events from Gemini
+        console.log(
+          `Getting game events for game ID: ${gameId} from video: ${videoPath}`
+        );
         const events: GameEvent[] =
           await geminiService.getVolleyballVideoEvents(videoPath);
 
